@@ -30,3 +30,21 @@ But if we want to look for source code here in js file we can add this functiona
 
 ## Changing the Mode with build
 we can change the mode to prod and dev async in the build script as well as in the webpack config
+
+## Adding CSS Support (+Sass,+PostCSS)
+We'll add css file and try to import it in index.js
+running build will generate the error
+"You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. "
+
+So We need to add module css-loader,mini-css-extract-plugin in project. Css-loader will inject the styles in js bundle. mini-css-extract -plugin will create resources in a final one single css file
+
+In Webpack.config,We need to import the miniCSSExtractPlugin and addit inside the plugins object
+and add a new rule for css
+in use obj in rules , webpakc will run first css-loader and the MiniCSSExtractPlugin.Loader package 
+for css files
+
+So right now we need to embed the css file to html file in build folder.
+
+After we notice if we make any changes in css file the whole app will relaod. it is due to Live Reloading but now we need to enable Hot reloading.
+for this we need to add hot:true in devServer obj in Webpack.config file. so by this we want to
+do anything inside html file in browser and do changes in css file n VScode it will not change the updated content but add style to prexisting build
