@@ -12,7 +12,8 @@ module.exports = {
     target:target,
     module:{
         rules:[{
-            test:/\.s?css$/i,
+            // test:/\.s?css$/i, or
+            test:/\.(s[ac]|c)ss$/i,
             use:[MiniCSSExtractPlugin.loader,"css-loader","postcss-loader","sass-loader"]
         },
         {
