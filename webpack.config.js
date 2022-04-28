@@ -8,8 +8,8 @@ module.exports = {
     mode:mode,
     module:{
         rules:[{
-            test:/\.css$/i,
-            use:[MiniCSSExtractPlugin.loader,"css-loader"]
+            test:/\.s?css$/i,
+            use:[MiniCSSExtractPlugin.loader,"css-loader","sass-loader"]
         },
         {
             test:/\.js$/,

@@ -44,7 +44,10 @@ in use obj in rules , webpakc will run first css-loader and the MiniCSSExtractPl
 for css files
 
 So right now we need to embed the css file to html file in build folder.
-
+## Adding Hot Reloading
 After we notice if we make any changes in css file the whole app will relaod. it is due to Live Reloading but now we need to enable Hot reloading.
 for this we need to add hot:true in devServer obj in Webpack.config file. so by this we want to
 do anything inside html file in browser and do changes in css file n VScode it will not change the updated content but add style to prexisting build
+
+## Adding SASS
+Adding Sass files and then adding it webpack.config for scss. it will check for both css and scss files. But also we need the sass and sass-loader packages. so  we need to add sass-loader in rules for scss,css rules.
