@@ -6,3 +6,13 @@ body{
     color:var(--text);
     font-size: 2rem;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+button{
+    font-style: 1.5rem;
+}

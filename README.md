@@ -51,3 +51,10 @@ do anything inside html file in browser and do changes in css file n VScode it w
 
 ## Adding SASS
 Adding Sass files and then adding it webpack.config for scss. it will check for both css and scss files. But also we need the sass and sass-loader packages. so  we need to add sass-loader in rules for scss,css rules.
+
+## Adding PostCSS
+Adding PostCSS files , adding postcss.config.js and then adding it webpack.config for scss. it will check for both css and scss files. But also we need the postcss postcss-preset-env postcss-loader packages. so  we need to add postcss-loader before sass-loader in rules for postcss files since if you add any comments in css or sass it would be removed if postcss-loader is added at last.
+
+## Adding Browserlist
+BrowserList is added in app to support a large list of browsers with backward compatibility
+to add this add .browserslistrc file in root directory of app.
