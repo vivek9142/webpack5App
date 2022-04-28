@@ -58,3 +58,7 @@ Adding PostCSS files , adding postcss.config.js and then adding it webpack.confi
 ## Adding Browserlist
 BrowserList is added in app to support a large list of browsers with backward compatibility
 to add this add .browserslistrc file in root directory of app.
+
+There is a bug in webpack when browserlist is added here, it is not doing hot reloading. 
+so to remove this, we need to add target in webpack.config switch to browserlist in production 
+but in web in dev mode.
