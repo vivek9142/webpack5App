@@ -62,3 +62,16 @@ to add this add .browserslistrc file in root directory of app.
 There is a bug in webpack when browserlist is added here, it is not doing hot reloading. 
 so to remove this, we need to add target in webpack.config switch to browserlist in production 
 but in web in dev mode.
+
+## React with JSX
+add react,react-dom , @babel/preset-react packages
+add react preset plugin in array and add runtime as automatic babel.config.js
+
+with automatic there is an opt in way for devs to not import react just when they're using the JSX. so this enhances performance.
+
+add react code in index.js and add root div in index.html now run it.react will show the msg or content
+
+when you create react code and compile it you wil get error since webpack is looking for js code but we are having jsx code so webpack config we need to do.
+we need to add resolve property this will automatically look for these extensions
+
+on runnning it will not run , show error since we dont have loaders setup

@@ -17,7 +17,8 @@ module.exports = {
             use:[MiniCSSExtractPlugin.loader,"css-loader","postcss-loader","sass-loader"]
         },
         {
-            test:/\.js$/,
+            test:/\.jsx?$/,
+            // saying it may or may not have x again
             exclude:/node_modules/,
             use:{
                 loader: "babel-loader",
@@ -25,6 +26,9 @@ module.exports = {
         },]
     },
     plugins:[new MiniCSSExtractPlugin()],
+    resolve:{
+        extensions:[".js",".jsx"]
+    },
     devtool:"source-map",
     devServer:{
         static:"./dist",
