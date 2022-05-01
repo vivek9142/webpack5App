@@ -96,3 +96,20 @@ Asset or Asset/resouce is a recommended way to choose here.
 
 We can also update the maxSize here in Asset type so the Webpack compare size to 
 size specified in the parser maxSize prop obj. if its less then it will convert to inline img else as an asset.
+
+## Cleaning the Dist Build folder
+By this commmand in package.json, it will clean all files in dist folder so it will also delete the 
+index.html file which is already not tracked in git and also not generated with webpack 
+
+we need to install html-webpack-plugin, import in webpack.config, go to plugins here and add it there.
+and We are gonna move the index.html file from dist to src file. 
+
+so when we clean dist folder and also run build command now it builds whole dist folder 
+with index.html file but it has some missing pieces here including the div root element.
+
+so we neeed to add new prop in the htmlwebpackplugins in plugins prop to direct the template to index.html in src folder.
+
+here after doing this it will use template to render the app index.html file 
+but it renders the file assets in index.html as duplicate so we need to
+remove the css and main.js embed from the template index.html. this is what it 
+does by default.

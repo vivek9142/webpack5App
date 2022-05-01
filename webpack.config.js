@@ -1,4 +1,5 @@
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
+const htmlWebpackPlugin = require('html-webpack-plugin');
 let mode = "development";
 let target = "web"
 if(process.env.NODE_ENV === "production") 
@@ -46,7 +47,12 @@ module.exports = {
             }
         },]
     },
-    plugins:[new MiniCSSExtractPlugin()],
+    plugins:[
+        new MiniCSSExtractPlugin(),
+        new htmlWebpackPlugin({
+        template:'./src/index.html'
+        })
+    ],
     resolve:{
         extensions:[".js",".jsx"]
     },
