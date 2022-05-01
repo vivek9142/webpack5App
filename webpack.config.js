@@ -18,7 +18,13 @@ module.exports = {
         {
             test:/\.(png|jpe?g|gif|svg)$/i,
             // type:"asset/resource",
-            type:"asset/inline"
+            // type:"asset/inline",
+            type:"asset",
+            parser:{
+                dataUrlCondition:{
+                    maxSize:30*1024,
+                }
+            }
         },    
         {
             // test:/\.s?css$/i, or

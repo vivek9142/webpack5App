@@ -89,3 +89,10 @@ we'll add new prop after target as output and add a object with assetModuleFileN
 also if we don't want images as whole we can convert all images to base64 codee format in
 contain all the code in base js file.to do this we need to modify rule of image with type of
 asset/inline.
+
+You can also let Webpack decide which asset to be in base64 i.e, inline or which asset can be files. Webpack decides based on default max size i.e, 8KB whether it should be inline or as an asset.
+
+Asset or Asset/resouce is a recommended way to choose here.
+
+We can also update the maxSize here in Asset type so the Webpack compare size to 
+size specified in the parser maxSize prop obj. if its less then it will convert to inline img else as an asset.
