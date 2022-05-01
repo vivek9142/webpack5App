@@ -75,3 +75,17 @@ when you create react code and compile it you wil get error since webpack is loo
 we need to add resolve property this will automatically look for these extensions
 
 on runnning it will not run , show error since we dont have loaders setup
+
+##Add Support for Images
+first add scss file for inclusion of file in css. then add rule in webpack.config to use for img assets.
+publicPath is designated for specifying the path where the rendered output of img is stored.
+
+another way is to load img asset in app is to import asset in the component
+itself.
+so by this time all imgs are stored in root directory of dist folder. we need to store this in specific folder.
+we'll add new prop after target as output and add a object with assetModuleFileName as 
+"images/[hash][ext][query]"
+
+also if we don't want images as whole we can convert all images to base64 codee format in
+contain all the code in base js file.to do this we need to modify rule of image with type of
+asset/inline.
