@@ -113,3 +113,11 @@ here after doing this it will use template to render the app index.html file
 but it renders the file assets in index.html as duplicate so we need to
 remove the css and main.js embed from the template index.html. this is what it 
 does by default.
+
+## Plugin to clean folder dist
+install and add clean-webpack-plugin, destruct CleanWebpackPlugin from require and put it at the top of the pulgins list.
+
+but when we will run it we'll get an error
+"clean-webpack-plugin: options.output.path not defined. Plugin disabled..."
+
+so we need to add a path prop in output prop of webpack.config in path we need to put absolute path so for this we need to use path.resolve() (path-node pre-existing module)
