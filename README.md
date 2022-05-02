@@ -121,3 +121,31 @@ but when we will run it we'll get an error
 "clean-webpack-plugin: options.output.path not defined. Plugin disabled..."
 
 so we need to add a path prop in output prop of webpack.config in path we need to put absolute path so for this we need to use path.resolve() (path-node pre-existing module)
+
+## React Fast Refresh feature
+By this live reloading of JSX with state keeping in place will take place.
+by this hot reloading of jsx will take place instantaneously.
+
+for this we need to install @pmmmwh/react-refresh-webpack-plugin,react-refresh
+
+update the babel file first. and update webpack config to plugins and add this plugin there.
+
+so after start server on this, it will not update the elements but the elements are said to be updated here. here it works but previously it doesn't 
+so to rectify this bug we need to specify the entry obj to src.
+
+so by this we can also do some syntax error and react will instaneously tell where's the error it
+will remove the error also keeping all the previous states.
+
+We can also create an component here in meanwhile react will wait for save and when it happens it updates the dom n also keeping the previous state.
+
+Also we can keep the states while we remove the elements of the app such as h1,button to update the state , e.g , the siblings.
+
+we can also wipe the state while updating the dom elements. for this we need to add comments // @refresh reset
+
+
+## React-Refresh Bug 
+if we run build command we will run into an error 
+"[ReactRefreshPlugin] Hot Module Replacement (HMR) is not enabled! React Refresh requires HMR to function properly." 
+
+so we need to change babel.config so that it run react-refresh/babel plugin only in dev mode.so we will push this plugin only in dev mode.
+same we need to do in webpack config.
