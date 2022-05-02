@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "webpack serve",
+    "start": "set SERVE=true& webpack serve",
     "watch": "webpack --watch",
     "build": "set NODE_ENV=PRODUCTION& webpack",
     "build-dev": "webpack",

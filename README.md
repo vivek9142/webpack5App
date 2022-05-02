@@ -149,3 +149,13 @@ if we run build command we will run into an error
 
 so we need to change babel.config so that it run react-refresh/babel plugin only in dev mode.so we will push this plugin only in dev mode.
 same we need to do in webpack config.
+
+## Build Dev command error bug fix
+
+when we try to run command build-dev we will run into error
+
+"[ReactRefreshPlugin] Hot Module Replacement (HMR) is not enabled! React Refresh requires HMR to function properly"
+
+so what we're doing so far, is node_env we're checking with prod if its not prod so we're going to do reactRefreshWebpackPlgin, so we only want this when we're doing webpack dev-server and live-reloading, we don't want that on build dev.htorealoadingwebpack plugin is not loading in this and so the reactrefreshWebpackPlugin is relying on it so popping out the error.
+
+we can set another env variable and check against it in webpack.config
